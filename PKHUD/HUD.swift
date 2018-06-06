@@ -40,6 +40,8 @@ public final class HUD {
     }
 
     public static var isVisible: Bool { return PKHUD.sharedHUD.isVisible }
+    
+    public static var customProgressView:UIView = UIView()
 
     // MARK: Public methods, PKHUD based
     public static func show(_ content: HUDContentType, onView view: UIView? = nil) {
@@ -78,7 +80,7 @@ public final class HUD {
         case .error:
             return PKHUDErrorView()
         case .progress:
-            return PKHUDProgressView()
+            return HUD.customProgressView
         case let .image(image):
             return PKHUDSquareBaseView(image: image)
         case let .rotatingImage(image):
