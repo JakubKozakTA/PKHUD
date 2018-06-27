@@ -119,6 +119,7 @@ open class PKHUD: NSObject {
             container.frame.size = view.frame.size
             container.autoresizingMask = [ .flexibleHeight, .flexibleWidth ]
             container.isHidden = true
+            container.backgroundColor = UIColor.white.withAlphaComponent(0.8)
         }
         if dimsBackground {
             container.showBackground(animated: true)

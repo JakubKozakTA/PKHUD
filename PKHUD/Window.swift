@@ -44,6 +44,7 @@ internal class ContainerView: UIView {
         layer.removeAllAnimations()
         frameView.center = center
         frameView.alpha = 1.0
+        self.alpha = 1.0
         isHidden = false
     }
 
@@ -66,6 +67,7 @@ internal class ContainerView: UIView {
 
         if anim {
             UIView.animate(withDuration: 0.8, animations: {
+                self.alpha = 0.0
                 self.frameView.alpha = 0.0
                 self.hideBackground(animated: false)
             }, completion: { _ in finalize(true) })
