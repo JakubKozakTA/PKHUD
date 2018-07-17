@@ -45,6 +45,7 @@ public final class HUD {
 
     // MARK: Public methods, PKHUD based
     public static func show(_ content: HUDContentType, onView view: UIView? = nil) {
+        PKHUD.sharedHUD.hudType = content
         PKHUD.sharedHUD.contentView = contentView(content)
         PKHUD.sharedHUD.show(onView: view)
     }

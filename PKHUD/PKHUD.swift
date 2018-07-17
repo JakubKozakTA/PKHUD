@@ -91,12 +91,15 @@ open class PKHUD: NSObject {
     open var isVisible: Bool {
         return !container.isHidden
     }
+    
+    internal var hudType:HUDContentType = .progress
 
     open var contentView: UIView {
         get {
             return container.frameView.content
         }
         set {
+            container.frameView.hudType = self.hudType
             container.frameView.content = newValue
             startAnimatingContentView()
         }

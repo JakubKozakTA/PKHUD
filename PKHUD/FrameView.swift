@@ -46,6 +46,15 @@ internal class FrameView: UIVisualEffectView {
 
         addMotionEffect(group)
     }
+    
+    internal var hudType:HUDContentType = .progress {
+        didSet {
+            switch hudType {
+            case .progress: self.effect = nil
+            default: self.effect = UIBlurEffect(style: .light)
+            }
+        }
+    }
 
     fileprivate var _content = UIView()
     internal var content: UIView {
